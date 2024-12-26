@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product-list</title>
+    <link rel="stylesheet" href="./asset/main.css">
+    <link rel="shortcut icon" href="./design/images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+</head>
+<body> 
+    <div class="container">
+        <!-- food's album Part -->
+        <section class="foodAlbum">
+            <h1 class="titleAlbum">Dessert</h1>
+            <ul class="menuFoodImage">
+                <!-- pictures and information -->
+                <li class="menuItem">
+                    <img src="./design/images/image-waffle-desktop.jpg" alt="foodPicture" class="AlbumImg">
+                    <span class="cartBtn">Add to Cart<i class="bi bi-cart-plus-fill cartIcon"></i></span>
+                    <h3 class="foodName">Waffel</h3>
+                    <p class="foodInfo">Waffel with Berries</p>
+                    <span class="price">$5.55</span>
+                </li>
+                <li class="menuItem">
+                    <img src="./design/images/image-creme-brulee-desktop.jpg" alt="foodPicture" class="AlbumImg">
+                    <span class="cartBtn">Add to Cart<i class="bi bi-cart-plus-fill cartIcon"></i></span>
+                    <h3 class="foodName">Creme Brulee</h3>
+                    <p class="foodInfo">Vanilla BEan Creme Brulee</p>
+                    <span class="price">$5.00</span>
+                </li>
+                <li class="menuItem">
+                    <img src="./design/images/image-macaron-desktop.jpg" alt="foodPicture" class="AlbumImg">
+                    <span class="cartBtn">Add to Cart<i class="bi bi-cart-plus-fill cartIcon"></i></span>
+                    <h3 class="foodName">Macaron</h3>
+                    <p class="foodInfo">Macaron Mix of Five</p>
+                    <span class="price">$1.00</span>
+                </li>
+                <li class="menuItem">
+                    <img src="./design/images/image-tiramisu-desktop.jpg" alt="foodPicture" class="AlbumImg">
+                    <span class="cartBtn">Add to Cart<i class="bi bi-cart-plus-fill cartIcon"></i></span>
+                    <h3 class="foodName">Tiramisu</h3>
+                    <p class="foodInfo">Classic Tiramisu</p>
+                    <span class="price">$3.05</span>
+                </li>
+                <li class="menuItem">
+                    <img src="./design/images/image-baklava-desktop.jpg" alt="foodPicture" class="AlbumImg">
+                    <span class="cartBtn">Add to Cart<i class="bi bi-cart-plus-fill cartIcon"></i></span>
+                    <h3 class="foodName">Baklava</h3>
+                    <p class="foodInfo">Pistachio Baklava</p>
+                    <span class="price">$4.32</span>
+                </li>
+                <li class="menuItem">
+                    <img src="./design/images/image-meringue-desktop.jpg" alt="foodPicture" class="AlbumImg">
+                    <span class="cartBtn">Add to Cart<i class="bi bi-cart-plus-fill cartIcon"></i></span>
+                    <h3 class="foodName">Pie</h3>
+                    <p class="foodInfo">Lemon Meringue Pie</p>
+                    <span class="price">$5.02</span>
+                </li>
+                <li class="menuItem">
+                    <img src="./design/images/image-cake-desktop.jpg" alt="foodPicture" class="AlbumImg">
+                    <span class="cartBtn">Add to Cart<i class="bi bi-cart-plus-fill cartIcon"></i></span>
+                    <h3 class="foodName">Cake</h3>
+                    <p class="foodInfo">Red Velavet Cake</p>
+                    <span class="price">$5.00</span>
+                </li>
+                <li class="menuItem">
+                    <img src="./design/images/image-brownie-desktop.jpg" alt="foodPicture" class="AlbumImg">
+                    <span class="cartBtn">Add to Cart<i class="bi bi-cart-plus-fill cartIcon"></i></span>
+                    <h3 class="foodName">Brownie</h3>
+                    <p class="foodInfo">Salted Caramel Brownie</p>
+                    <span class="price">$5.22</span>
+                </li>
+                <li class="menuItem">
+                    <img src="./design/images/image-panna-cotta-desktop.jpg" alt="foodPicture" class="AlbumImg">
+                    <span class="cartBtn">Add to Cart<i class="bi bi-cart-plus-fill cartIcon"></i></span>
+                    <h3 class="foodName">Panna Cotta</h3>
+                    <p class="foodInfo">Vanilla Panna Cotta</p>
+                    <span class="price">$5.3</span>
+                </li>
+            </ul>
+        </section>
+        <!-- product-Cart part -->
+         <section class="cardSection">
+            <div class="cardPart">
+<h1 class="cardTitle">Your Cart(0)</h1>
+<img src="./design/images/illustration-empty-cart.svg" alt="cake" class="cakeImageCard">
+<p class="cardText">You add items will appear here!</p>
+            </div>
+         </section>
+         <!-- modaul card -->
+          <section class="modaulPart">
+            <span class="checkIcon"><i class="bi bi-check-circle checkIcon"></i></span>
+            <h1 class="modaulTitle">Order Confirmed</h1>
+            <p class="textModaul">We hope you enjoy food!</p>
+            <ul class="listFood"></ul>
+            <button type="submit" class="orderBtn">Start New Order</button>
+          </section>
+    </div>
+    <script src="./asset/script.js"></script>
+</body>
+</html>
