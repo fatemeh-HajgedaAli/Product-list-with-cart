@@ -25,52 +25,49 @@ a , li , ul , ol{
 }
 // album Part
 .foodAlbum{
-    display: flex;
+ display: flex;
 .titleAlbum{
-    display: inline-block;
-    position: absolute;
-    font-family: var(--font-family-Bold);
-    margin-left: 2.5em;
-    font-size: 2.2em;
-    color: var(--black);
-}
+display: inline-block;
+position: absolute;
+font-family: var(--font-family-Bold);
+margin-left: 2.5em;
+font-size: 2.2em;
+color: var(--black);}
 // album Image
 .menuFoodImage{
-    display: flex;
-    position: relative;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.2em;
-    .AlbumImg{
-        width: 20em;
-        margin-top: 5em;
-        margin-left: 3em;
-        border-radius: 1em;
-        box-shadow: 1px 1px 8px var(--gray);}
-        .AlbumImg:hover{
-            border: 4px solid var(--orange-dark);
-            cursor: pointer;
-            transition: all 250ms ease-in-out;
-        }
-    .cartBtn{
-    display: block;
-    position: absolute;
-    margin-left:7em;
-    margin-top: -2.5em;
-    background-color: var(--white);
-    padding: 0.5em 2em;
-    border-radius: 2em;
-    border: 1px solid var(--orange-dark);
-    color: var(--black);
-    font-family: var(--font-family-Bold);
-    cursor: pointer;
-    .cartIcon{
-        display: inline;
-        padding-left: 1em;
-        color: var(--orange-dark);
-        font-size: 1.2em;
-    }
-    }
+display: flex;
+position: relative;
+flex-direction: row;
+flex-wrap: wrap;
+gap: 0.2em;
+.AlbumImg{
+width: 20em;
+margin-top: 5em;
+margin-left: 3em;
+border-radius: 1em;
+box-shadow: 1px 1px 8px var(--gray);}
+.AlbumImg:hover{
+border: 4px solid var(--orange-dark);
+cursor: pointer;
+transition: all 250ms ease-in-out;}
+.cartBtn{
+display: block;
+position: absolute;
+margin-left:7em;
+margin-top: -2.5em;
+background-color: var(--white);
+padding: 0.5em 2em;
+border-radius: 2em;
+border: 1px solid var(--orange-dark);
+color: var(--black);
+font-family: var(--font-family-Bold);
+cursor: pointer;
+.cartIcon{
+    display: inline;
+    padding-left: 1em;
+    color: var(--orange-dark);
+    font-size: 1.2em;
+}}
 .foodInfo{
     display: flex;
     flex-direction: column;
