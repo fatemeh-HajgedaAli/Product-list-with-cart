@@ -56,33 +56,33 @@ body a, body li, body ul, body ol {
   cursor: pointer;
   transition: all 250ms ease-in-out;
 }
-.foodAlbum .menuFoodImage .cartBtn {
+.foodAlbum .cartBtn {
   display: block;
   position: absolute;
-  margin-left: 7em;
+  margin-left: 9em;
   margin-top: -2.5em;
   background-color: var(--white);
-  padding: 0.5em 2em;
+  padding: 0.8em 2em;
   border-radius: 2em;
   border: 1px solid var(--orange-dark);
   color: var(--black);
   font-family: var(--font-family-Bold);
   cursor: pointer;
 }
-.foodAlbum .menuFoodImage .cartBtn .cartIcon {
+.foodAlbum .cartIcon {
   display: inline;
   padding-left: 1em;
   color: var(--orange-dark);
   font-size: 1.2em;
 }
-.foodAlbum .menuFoodImage .cartaddRemove {
+.foodAlbum .cartaddRemove {
   display: none;
   position: absolute;
-  width: 8em;
-  margin-left: 7em;
+  width: 12.5em;
+  margin-left: 9em;
   margin-top: -2.5em;
   background-color: var(--orange-dark);
-  padding: 0.5em 2.1em;
+  padding: 0.8em 2.4em;
   border-radius: 2em;
   border: 1px solid var(--orange-dark);
   color: var(--white);
@@ -90,27 +90,27 @@ body a, body li, body ul, body ol {
   cursor: pointer;
   text-align: center;
 }
-.foodAlbum .menuFoodImage .cartaddRemove .plus, .foodAlbum .menuFoodImage .cartaddRemove .mines {
+.foodAlbum .cartaddRemove .plus, .foodAlbum .cartaddRemove .mines {
   padding: 1em;
   font-size: 1.2em;
 }
-.foodAlbum .menuFoodImage .foodInfo {
+.foodAlbum .foodInfo {
   display: flex;
   flex-direction: column;
   position: relative;
   left: 3.2em;
   top: 1em;
 }
-.foodAlbum .menuFoodImage .foodInfo .foodName {
+.foodAlbum .foodInfo .foodName {
   color: var(--gray);
   font-family: var(--font-family-SemiBold);
 }
-.foodAlbum .menuFoodImage .foodInfo .foodText {
+.foodAlbum .foodInfo .foodText {
   font-family: var(--font-family-Bold);
   font-size: 1.4em;
   margin-top: -0.5em;
 }
-.foodAlbum .menuFoodImage .foodInfo .price {
+.foodAlbum .foodInfo .price {
   font-family: var(--font-family-SemiBold);
   font-size: 1.4em;
   margin-top: -0.5em;
