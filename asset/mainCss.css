@@ -69,7 +69,7 @@ body a, body li, body ul, body ol {
   font-family: var(--font-family-Bold);
   cursor: pointer;
 }
-.foodAlbum .cartIcon {
+.foodAlbum .cartBtn .cartIcon {
   display: inline;
   padding-left: 1em;
   color: var(--orange-dark);
@@ -77,10 +77,11 @@ body a, body li, body ul, body ol {
 }
 .foodAlbum .cartaddRemove {
   display: none;
-  position: absolute;
-  width: 12.5em;
-  margin-left: 9em;
-  margin-top: -2.5em;
+  position: relative;
+  width: 6em;
+  height: 1.2em;
+  margin-left: 7em;
+  margin-top: -2.3em;
   background-color: var(--orange-dark);
   padding: 0.8em 2.4em;
   border-radius: 2em;
@@ -90,27 +91,50 @@ body a, body li, body ul, body ol {
   cursor: pointer;
   text-align: center;
 }
-.foodAlbum .cartaddRemove .plus, .foodAlbum .cartaddRemove .mines {
-  padding: 1em;
+.foodAlbum .cartaddRemove .addCart {
+  position: absolute;
+  background: var(--orange-light);
+  border-radius: 100%;
+  border: 1.2px solid white;
   font-size: 1.2em;
+  color: var(--white);
+  z-index: 999;
+  margin-left: -3em;
+  margin-top: -0.2em;
+  padding: 0.1em 0.3em;
+  cursor: pointer;
 }
-.foodAlbum .foodInfo {
+.foodAlbum .cartaddRemove .removeCart {
+  position: absolute;
+  background: var(--orange-light);
+  border-radius: 100%;
+  padding: 0.1em 0.5em;
+  border: 1.2px solid white;
+  font-size: 1.2em;
+  color: var(--white);
+  z-index: 999;
+  margin-left: 1.7em;
+  margin-top: -0.2em;
+  cursor: pointer;
+}
+
+.foodInfo {
   display: flex;
   flex-direction: column;
   position: relative;
   left: 3.2em;
   top: 1em;
 }
-.foodAlbum .foodInfo .foodName {
+.foodInfo .foodName {
   color: var(--gray);
   font-family: var(--font-family-SemiBold);
 }
-.foodAlbum .foodInfo .foodText {
+.foodInfo .foodText {
   font-family: var(--font-family-Bold);
   font-size: 1.4em;
   margin-top: -0.5em;
 }
-.foodAlbum .foodInfo .price {
+.foodInfo .price {
   font-family: var(--font-family-SemiBold);
   font-size: 1.4em;
   margin-top: -0.5em;

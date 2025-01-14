@@ -63,19 +63,21 @@ border: 1px solid var(--orange-dark);
 color: var(--black);
 font-family: var(--font-family-Bold);
 cursor: pointer;
-}
 .cartIcon{
 display: inline;
 padding-left: 1em;
 color: var(--orange-dark);
 font-size: 1.2em;
 }
+}
+//remove and add button.
 .cartaddRemove{
-display:none;
-position: absolute;
-width: 12.5em;
-margin-left: 9em;
-margin-top: -2.5em;
+display: none;
+position: relative;
+width: 6em;
+height: 1.2em;
+margin-left: 7em;
+margin-top: -2.3em;
 background-color: var(--orange-dark);
 padding: 0.8em 2.4em;
 border-radius: 2em;
@@ -84,25 +86,50 @@ color: var(--white);
 font-family: var(--font-family-Bold);
 cursor: pointer;
 text-align: center;
-.plus ,.mines{
-padding: 1em;
+//add and remove sign.
+.addCart{
+position:absolute;
+background: var(--orange-light);
+border-radius: 100%;
+border:1.2px solid #ffff;
 font-size: 1.2em;
+color: var(--white);
+z-index: 999;
+margin-left: -3em;
+margin-top: -0.2em;
+padding: 0.1em 0.3em;
+cursor: pointer;
+}
+.removeCart{
+position: absolute;
+background: var(--orange-light);
+border-radius: 100%;
+padding: 0.1em 0.5em;
+border: 1.2px solid white;
+font-size: 1.2em;
+color: var(--white);
+z-index: 999;
+margin-left: 1.7em;
+margin-top: -0.2em;
+cursor: pointer;
 }
 }
+}
+//food in formation style.
 .foodInfo{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    left: 3.2em;
-    top: 1em;
+display: flex;
+flex-direction: column;
+position: relative;
+left: 3.2em;
+top: 1em;
 .foodName{
-    color: var(--gray);
-    font-family: var(--font-family-SemiBold);
+color: var(--gray);
+font-family: var(--font-family-SemiBold);
 }
 .foodText{
-    font-family: var(--font-family-Bold);
-    font-size: 1.4em;
-    margin-top: -0.5em;
+font-family: var(--font-family-Bold);
+font-size: 1.4em;
+margin-top: -0.5em;
 }
 .price{
 font-family: var(--font-family-SemiBold);
@@ -110,11 +137,8 @@ font-size: 1.4em;
 margin-top: -0.5em;
 color: var(--orange-dark);
 }
-        
-    }
 }
-
-// card Section
+// product-Cart part
 .cardSection{
     .cardPart{
         position: absolute;
@@ -125,13 +149,12 @@ color: var(--orange-dark);
         padding: 1.5em;
         width: 16em;
         border-radius: 1em;
-        .cardTitle{
+     .cardTitle{
             text-align: start;
             font-family: var(--font-family-Bold);
             font-size: 1.5em;
             color: var(--orange-dark);
             margin-top: -0.2em;
-          
         }
         .cardText{
             font-family: var(--font-family-Regular);
