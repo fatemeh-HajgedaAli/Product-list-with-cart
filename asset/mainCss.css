@@ -68,6 +68,7 @@ body a, body li, body ul, body ol {
   color: var(--black);
   font-family: var(--font-family-Bold);
   cursor: pointer;
+  box-shadow: 1px 2px 5px var(--gray);
 }
 .foodAlbum .cartBtn .cartIcon {
   display: inline;
@@ -116,6 +117,7 @@ body a, body li, body ul, body ol {
   margin-left: 1.7em;
   margin-top: -0.2em;
   cursor: pointer;
+  box-shadow: 1px 2px 5px var(--gray);
 }
 
 .foodInfo {
@@ -149,19 +151,62 @@ body a, body li, body ul, body ol {
   text-align: center;
   padding: 1.5em;
   width: 16em;
+  height: auto;
   border-radius: 1em;
+  size: 1.2em;
 }
-.cardSection .cardPart .cardTitle {
+.cardSection .cardTitle {
   text-align: start;
   font-family: var(--font-family-Bold);
   font-size: 1.5em;
   color: var(--orange-dark);
   margin-top: -0.2em;
 }
-.cardSection .cardPart .cardText {
+.cardSection .totalAmount {
+  display: none;
+  position: sticky;
+  top: 11em;
+  font-size: 1.2em;
+  font-family: var(--font-family-Bold);
+  border-top: 3px solid var(--orange-dark);
+  color: var(--orange-light);
+}
+.cardSection .cardText {
   font-family: var(--font-family-Regular);
   font-size: 1em;
   color: var(--gray);
+}
+.cardSection #selectBtn {
+  display: none;
+  background-color: var(--orange-light);
+  color: var(--white);
+  font-family: var(--font-family-Bold);
+  text-transform: uppercase;
+  border: none;
+  padding: 1em 3em;
+  align-items: center;
+  margin: 11em 0 0 3em;
+  border-radius: 2em;
+  box-shadow: 1px 2px 5px var(--gray);
+}
+.cardSection .cartItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1em;
+  font-family: var(--font-family-SemiBold);
+  font-size: 1em;
+  margin-left: -2em;
+}
+.cardSection .removeItem {
+  background: none;
+  color: var(--orange-dark);
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+}
+.cardSection .removeItem:hover {
+  color: var(--orange-light);
 }
 
 .modaulPart {

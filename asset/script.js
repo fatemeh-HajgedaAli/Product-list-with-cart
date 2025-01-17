@@ -1,83 +1,140 @@
-let $=document
-//make arry for save items :
-let cart = []; // Array to hold the items added to the cart.
-let cartBtn = $.querySelectorAll('.cartBtn'); // Select all buttons related to the cart functionality.
-let buyItem=$.querySelector('.buyItem');
+let $ = document;
+let cart = []; // سبد خرید.
 
+document.addEventListener('DOMContentLoaded', function () {
+    const cartBtn = $.querySelectorAll('.cartBtn'); // دکمه‌های افزودن به سبد خرید
+    const cartCount = $.querySelector('.cartCount'); // نمایش تعداد آیتم‌ها در سبد خرید
+    const cartItemsList = $.querySelector('.cartItem'); // لیست آیتم‌های سبد خرید
+    const totalAmount = $.querySelector('.totalAmount'); // نمایش مبلغ کل
+    const confirmBtn = $.querySelector('#selectBtn'); // دکمه Confirm
 
-// Loop through all cart buttons and add an event listener to handle clicks.
-
-cartBtn.forEach(function(button) {
-    let count = 0; // Initialize count for each button.
-    button.addEventListener('click', function() {
-        toggleCart(button); // Call the function to handle cart management when the button is clicked.
+    cartBtn.forEach(function(button) {
+        button.addEventListener('click', function() {
+            toggleCart(button);
+        });
     });
-});
 
-// Function to add or remove items from the cart.
+    function toggleCart(button) {
+        const foodId = button.dataset.id;
+        const foodName = button.dataset.name;
+        const price = parseFloat(button.dataset.price);
+        const isInCart = cart.some((item) => item.id === foodId);
+        const cartaddRemove = button.parentElement.querySelector('.cartaddRemove');
 
-function toggleCart(button) {
-    const foodId = button.dataset.id; // Get the ID of the selected food item.
-    const foodName = button.dataset.name; // Get the name of the selected food item.
+        if (isInCart) {
+            // حذف آیتم از سبد خرید
+            cart = cart.filter((item) => item.id !== foodId);
+            cartaddRemove.style.display = 'none';
+        } else {
+            // افزودن آیتم به سبد خرید
+            cartaddRemove.style.display = 'block';
+            cart.push({ id: foodId, name: foodName, price, quantity: 1 });
+        }
 
-    console.log(foodId)
-    const isInCart = cart.some((item) => item.name === foodName); // Check if the item is already in the cart.
-    const cartaddRemove = button.nextElementSibling; // Select the next sibling element (e.g., for showing/hiding add/remove options).
-
-    if (isInCart) {
-        // If the item is already in the cart, remove it.
-        cart = cart.filter((item) => item.name !== foodName);
-        cartaddRemove.style.display = 'none'; // Hide the add/remove button.
-    } else {
-        // If the item is not in the cart, add it.
-        cartaddRemove.style.display = 'block'; // Show the add/remove button.
-        cart.push({ id: foodId, name: foodName }); // Add the item to the cart array.
+        updateCartCount();
+        updateCartList();
+        toggleConfirmButton();
     }
-
-    updateCartCount(); // Update the cart count displayed on the page.
-    updateCartList();
-}
-
-// Function to update the cart item count displayed in the UI.
-function updateCartCount() {
-    const itemNumber = $.querySelector('.itemNumber'); // Select the element showing the cart item count.
-    if (cart.length === 0) {
-        // If the cart is empty, display (0).
-        itemNumber.innerHTML = `(0)`;
-    } else {
-        // Otherwise, display the current number of items in the cart.
-        itemNumber.innerHTML = `(${cart.length})`;
+//update Cart.
+    function updateCartCount() {
+        if (cartCount) {
+            cartCount.textContent = `(${cart.length})`;
+        }
     }
-}
 
 function updateCartList() {
-const buyItem=$.querySelector('.buyItem')
-buyItem.innerHTML = cart.map((item) => `<li>${item.name}</li>`).join('');
-}
-
-// Select all buttons for adding and removing individual food items.
-const addCart = $.querySelectorAll('.addCart'); 
-const removeCart = $.querySelectorAll('.removeCart'); 
-let count = 0; // Initialize the count for food item selection.
-// Add functionality for "Add" buttons.
-addCart.forEach((button) => { 
-    button.addEventListener('click', function() {
-        const countNumber = button.parentElement.querySelector('.count'); // Find the count element for this specific button's parent.
-        count++; // Increment the count for the food item.
-        if (count > 0) {
-            countNumber.textContent = count; // Update the count displayed for this item.
-        }  
-    });
-});
-// Add functionality for "Remove" buttons.
-removeCart.forEach((button) => {
-    button.addEventListener('click', function() {
-        const countNumber = button.parentElement.querySelector('.count'); // Find the count element for this specific button's parent.
-        if (count > 0) {
-            count--; // Decrement the count for the food item.
-            if (countNumber) {
-                countNumber.textContent = count; // Update the count displayed for this item.
-            }
+    cartItemsList.innerHTML = '';
+    let total = 0;
+    //add item to the cart.
+ cart.forEach(item => {
+            total += item.price * item.quantity;
+            const listItem = $.createElement('li');
+            listItem.innerHTML = `
+                ${item.quantity}x ${item.name} - $${(item.price * item.quantity).toFixed(2)}
+                <button class="removeItem" data-id="${item.id}"><i class="bi bi-trash-fill"></i></button>`;
+            cartItemsList.appendChild(listItem);
+        });
+const cardText=$.querySelector('.cardText')
+cardText.style.display='none'
+const cakeImageCard=$.querySelector('.cakeImageCard')
+cakeImageCard.style.display='none'
+        // به‌روزرسانی جمع کل
+totalAmount.textContent = `$${total.toFixed(2)}`;
+totalAmount.style.display='block'
+        // اضافه کردن رویداد حذف برای دکمه‌های ❌
+    $.querySelectorAll('.removeItem').forEach(button => {
+            button.addEventListener('click', function() {
+                const itemId = button.dataset.id;
+                cart = cart.filter(item => item.id !== itemId);
+                updateCartList();
+                updateCartCount();
+            });
+        });
+    };
+    // confirm to show our modaul button.
+    function toggleConfirmButton() {
+        if (cart.length > 0) {
+            confirmBtn.style.display = 'block';
+        } else {
+            confirmBtn.style.display = 'none';
         }
+        confirmBtn.addEventListener('click',function(){
+const modaulPart=$.querySelector('.modaulPart')
+modaulPart.style.display='block'
+
+        }) ;
+    }
+
+    // افزایش تعداد آیتم‌ها
+    addCart.forEach(button => {
+        button.addEventListener('click', function() {
+            const foodId = button.parentElement.parentElement.querySelector('.cartBtn').dataset.id;
+            const item = cart.find(item => item.id === foodId);
+
+            if (item) {
+                item.quantity++;
+                updateCartList();
+            }
+        });
+    });
+
+    // کاهش تعداد آیتم‌ها
+    removeCart.forEach(button => {
+        button.addEventListener('click', function() {
+            const foodId = button.parentElement.parentElement.querySelector('.cartBtn').dataset.id;
+            const item = cart.find(item => item.id === foodId);
+            if (item && item.quantity > 1) {
+                item.quantity--;
+                updateCartList();
+            } else if (item && item.quantity === 1) {
+                cart = cart.filter(cartItem => cartItem.id !== foodId);
+                button.parentElement.style.display = 'none';
+                updateCartList();
+                updateCartCount();
+            }
+        });
     });
 });
+
+//this part is for adding and removing buttion with +|- .
+const addCart = $.querySelectorAll('.addCart'); 
+const removeCart = $.querySelectorAll('.removeCart');
+//+ button .
+addCart.forEach((button) => {
+button.addEventListener('click', function() {
+const countNumber = button.parentElement.querySelector('.count');
+let count = parseInt(countNumber.textContent);
+count++;
+countNumber.textContent = count;
+});});
+// - button .
+removeCart.forEach((button) => {
+        button.addEventListener('click', function() {
+            const countNumber = button.parentElement.querySelector('.count');
+            let count = parseInt(countNumber.textContent);
+            if (count > 0) {
+                count--;
+                countNumber.textContent = count;
+            }
+        });
+    });
