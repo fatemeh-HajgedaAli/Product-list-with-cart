@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // حذف آیتم از سبد خرید
             cart = cart.filter((item) => item.id !== foodId);
             cartaddRemove.style.display = 'none';
+            
         } else {
             // افزودن آیتم به سبد خرید
             cartaddRemove.style.display = 'block';
